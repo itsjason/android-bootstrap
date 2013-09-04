@@ -38,6 +38,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.core.Constants;
 import com.donnfelker.android.bootstrap.core.User;
 import com.donnfelker.android.bootstrap.util.Ln;
@@ -138,8 +139,10 @@ public class BootstrapAuthenticatorActivity extends SherlockAccountAuthenticator
 
         Views.inject(this);
 
-        emailText.setAdapter(new ArrayAdapter<String>(this,
-                simple_dropdown_item_1line, userEmailAccounts()));
+        emailText = (AutoCompleteTextView) findViewById(id.et_email);
+        passwordText = (EditText) findViewById(id.et_password);
+        signinButton = (Button) findViewById(id.b_signin);
+
 
         passwordText.setOnKeyListener(new OnKeyListener() {
 
@@ -164,6 +167,10 @@ public class BootstrapAuthenticatorActivity extends SherlockAccountAuthenticator
                 return false;
             }
         });
+
+
+        emailText.setAdapter(new ArrayAdapter<String>(this,
+                simple_dropdown_item_1line, userEmailAccounts()));
 
         emailText.addTextChangedListener(watcher);
         passwordText.addTextChangedListener(watcher);

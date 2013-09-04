@@ -22,6 +22,9 @@ public class NewsActivity extends BootstrapActivity {
 
         setContentView(R.layout.news);
 
+        title = (TextView) findViewById(R.id.tv_title);
+        content = (TextView) findViewById(R.id.tv_content);
+
         if(getIntent() != null && getIntent().getExtras() != null) {
             newsItem = (News) getIntent().getExtras().getSerializable(NEWS_ITEM);
         }

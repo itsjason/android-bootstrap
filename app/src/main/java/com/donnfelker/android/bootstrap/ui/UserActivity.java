@@ -24,6 +24,9 @@ public class UserActivity extends BootstrapActivity {
 
         setContentView(R.layout.user_view);
 
+        avatar = (ImageView) findViewById(R.id.iv_avatar);
+        name = (TextView) findViewById(R.id.tv_name);
+
         if(getIntent() != null && getIntent().getExtras() != null) {
             user = (User) getIntent().getExtras().getSerializable(USER);
         }

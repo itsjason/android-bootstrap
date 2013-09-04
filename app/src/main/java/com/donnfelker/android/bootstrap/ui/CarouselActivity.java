@@ -51,6 +51,9 @@ public class CarouselActivity extends BootstrapFragmentActivity {
         menuDrawer.setSlideDrawable(R.drawable.ic_drawer);
         menuDrawer.setDrawerIndicatorEnabled(true);
 
+        indicator = (TitlePageIndicator) findViewById(R.id.tpi_header);
+        pager = (ViewPager) findViewById(R.id.vp_pages);
+
         Views.inject(this);
 
         checkAuth();

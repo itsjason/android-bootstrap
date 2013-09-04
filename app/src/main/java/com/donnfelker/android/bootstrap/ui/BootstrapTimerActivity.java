@@ -39,6 +39,12 @@ public class BootstrapTimerActivity extends BootstrapFragmentActivity implements
 
         setContentView(R.layout.bootstrap_timer);
 
+        chronometer = (TextView) findViewById(R.id.chronometer);
+        start = (Button) findViewById(R.id.start);
+        stop = (Button) findViewById(R.id.stop);
+        pause = (Button) findViewById(R.id.pause);
+        resume = (Button) findViewById(R.id.resume);
+
         setTitle(R.string.timer);
 
         start.setOnClickListener(this);
